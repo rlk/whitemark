@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<meta charset="utf-8">
+<html>
+<head>
+<script src="whitemark.js"></script>
+<style>
+body {
+  font-family: Calibri, sans-serif;
+  margin: 3em;
+}
+textarea {
+	width: 100%;
+}
+p.author {
+    color: #CCC;
+    text-align: right;
+}
+</style>
+</head>
+<body>
+<h1>Whitemark</h1>
+<p>Whitemark encodes and decodes steganographic messages in the whitespace of text.</p>
+<p>Each non-indenting space in the plaintext is replaced with a normal space (<code>20</code>) or a non-breaking space (<code>A0</code>) to represent 0 and 1 respectively. Each 8-bit message character is encoded in a 10-bit frame with a 1 start-bit and a 0 stop-bit, which enables the resynchronization of a corrupt message stream.</p>
+<ul>
+<li>To encode, type or paste text into the Plaintext and Message boxes.</li>
+<li>To decode, type or paste text into the Stegotext box.</li>
+</ul>
+<p>This process runs in your browser and does not transmit data to the server.</p>
+<h2>Plaintext</h2>
+<textarea id="plain" rows="20" cols="80" oninput="plainChange()"></textarea>
+<h2>Message</h2>
+<textarea id="message" rows="3" cols="80" oninput="messageChange()"></textarea>
+<h2>Stegotext</h2>
+<textarea id="stego" rows="20" cols="80" oninput="stegoChange()"></textarea>
+<p>If the Stegotext is red then there is insufficient white space in the Plaintext to fully encode the Message.</p>
+<p class="author">Copyright &copy; 2015&ndash;2016 <a href="http://kooima.net">Robert Kooima</a></p>
+</body>
+</html>

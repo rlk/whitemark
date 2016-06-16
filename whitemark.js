@@ -116,7 +116,7 @@ function iseol(c) {
 }
 
 // Decode and return the bit string embedded in the white space of the given
-// data string. Ignore identation whitespace.
+// data string. Ignore indentation whitespace.
 
 function decode(data) {
 	var intext = false;
@@ -169,9 +169,6 @@ function confirm() {
 	var plain   = document.getElementById("plain");
 	var message = document.getElementById("message");
 	var stego   = document.getElementById("stego");
-
-	console.log('[' + frombits(decode(stego.value)) + ']');
-	console.log('(' + message.value + ')');
 
 	if (message.value.localeCompare(frombits(decode(stego.value))))
 		stego.style.color = 'red';
